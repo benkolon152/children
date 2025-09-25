@@ -1,5 +1,6 @@
 import React from 'react'
 import Parent from './Parent'
+import Chield from './Chield'
 
 import './App.css'
 
@@ -16,7 +17,9 @@ export default class App extends React.Component{
       <div>
         <p>
           <button id='btnAppendChild' onClick={()=>this.handleAppendChildClick("btnAppendChild")}>Append child</button>
-          <Parent/>
+          <Parent>
+            <Chield/>
+          </Parent>
         </p>
       </div>
     )
