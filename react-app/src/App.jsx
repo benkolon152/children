@@ -18,7 +18,12 @@ export default class App extends React.Component{
         <p>
           <button id='btnAppendChild' onClick={()=>this.handleAppendChildClick("btnAppendChild")}>Append child</button>
           <Parent>
-            <Chield/>
+            {Array.from(
+              {length: this.state.cntChildren},
+              (elem, idx) => (
+                <Chield/>
+              )
+              )}
           </Parent>
         </p>
       </div>
