@@ -21,7 +21,7 @@ export default class App extends React.Component{
             {Array.from(
               {length: this.state.cntChildren},
               (elem, idx) => (
-                <Chield key={idx} name="Viktor idx+1"/>
+                <Chield key={idx} name={`Viktor ${idx+1}`}/>
               )
               )}
           </Parent>
