@@ -11,13 +11,16 @@ export default class App extends React.Component{
 
   handleAppendChildClick = buttonId => this.setState({cntChildren: this.state.cntChildren+1})
 
+  handleChildMessageRetrieval = message => {
+    console.log('message', message)
+  }
 
   render(){
     return (
       <div>
         <p>
           <button id='btnAppendChild' onClick={()=>this.handleAppendChildClick("btnAppendChild")}>Append child</button>
-          <Parent>
+          <Parent onChildMessageRetrieval={this.handleChildMessageRetrieval}>
             {Array.from(
               {length: this.state.cntChildren},
               (elem, idx) => (
