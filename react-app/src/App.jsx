@@ -13,6 +13,8 @@ export default class App extends React.Component{
 
   handleChildMessageRetrieval = message => {
     console.log('message', message)
+    console.log('sender child name', message.me.props.name)
+    console.log('message', message.message)
   }
 
   render(){
@@ -20,11 +22,13 @@ export default class App extends React.Component{
       <div>
         <p>
           <button id='btnAppendChild' onClick={()=>this.handleAppendChildClick("btnAppendChild")}>Append child</button>
-          <Parent onChildMessageRetrieval={this.handleChildMessageRetrieval}>
+          <Parent>
             {Array.from(
               {length: this.state.cntChildren},
               (elem, idx) => (
-                <Chield key={idx} name={`Viktor ${idx+1}`}/>
+                <Chield key={idx} name={`Viktor ${idx+1}`}
+                onChildMessageRetrieval={this.handleChildMessageRetrieval}
+                />
               )
               )}
           </Parent>
