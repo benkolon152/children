@@ -14,6 +14,10 @@ export default class Parent extends React.Component{
     }
 
     componentDidMount(){
-        console.log('children', this.props.children)
+        console.log('componentDidMount children', this.props.children)
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        console.log('componentDidUpdate children', this.props.children)
     }
 }
